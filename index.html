@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunnydale School - Welcome to Our Community</title>
+  
+  <!-- Step 1, 2, 5, 7: Internal Stylesheet -->
+  <style id="main-styles">
+    /* General Body Styles */
+    body {
+      font-family: 'Arial', sans-serif; /* Step 2: Friendly & readable font */
+      line-height: 1.6;
+      color: #333333;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    /* Step 1: Enhance the Page Title */
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1E90FF; /* Dodger Blue */
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    /* Step 2: Customize Section Colors (Initial Requirements) */
+    h2.mission-heading {
+      color: #32CD32; /* LimeGreen */
+    }
+
+    h2#upcoming-events {
+      color: #FFA07A; /* LightSalmon */
+    }
+
+    h2.contact-heading {
+      color: #20B2AA; /* LightSeaGreen */
+    }
+
+    /* Step 5: ID Selector for Upcoming Events Background */
+    /* Note: Styled the section container under the heading */
+    .events-container {
+      background-color: #FFFFE0; /* LightYellow */
+      padding: 15px 20px;
+      border-radius: 6px;
+      margin-bottom: 25px;
+    }
+
+    /* Step 5: Class Selector for Outdoor Events */
+    .outdoor {
+      background-color: #AFEEEE; /* PaleTurquoise */
+      padding: 5px;
+      border: 1px solid #B0E0E6; /* PowderBlue */
+      margin-bottom: 8px;
+      border-radius: 4px;
+      list-style-position: inside;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    /* Step 7: Section Box for Contact Info */
+    .section {
+      background-color: #f8f3f3;
+      padding: 10px;
+      border-radius: 6px;
+      border-left: 4px solid #20B2AA;
+    }
+
+    .contact-item {
+      cursor: pointer;
+      display: inline-block;
+      margin: 5px 0;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+
+    .contact-item:hover {
+      background-color: #e0e0e0;
+    }
+
+    /* Interactive Feedback Toast */
+    #feedback-toast {
+      display: none;
+      background-color: #2e7d32;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 4px;
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* Step 8: Refined Theme Styles (toggled via JS button) */
+    body.refined-theme {
+      background-color: #f8f9fa;
+    }
+
+    body.refined-theme .container {
+      border-top: 5px solid #1a365d;
+    }
+
+    body.refined-theme h1 {
+      color: #1a365d; /* Professional Deep Navy */
+    }
+
+    body.refined-theme h2 {
+      color: #2b6cb0 !important; /* Harmonized Slate Blue for all H2s */
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 5px;
+    }
+
+    body.refined-theme .events-container {
+      background-color: #f7fafc;
+      border: 1px solid #e2e8f0;
+    }
+
+    body.refined-theme .outdoor {
+      background-color: #ebf8ff;
+      border: 1px solid #bee3f8;
+      color: #2b6cb0;
+    }
+
+    body.refined-theme .section {
+      background-color: #edf2f7;
+      border-left-color: #2b6cb0;
+    }
+
+    /* Theme Switcher Banner */
+    .theme-switcher {
+      background: #edf2f7;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .theme-btn {
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .theme-btn:hover {
+      opacity: 0.9;
+    }
+
+    /* Step 8 Suggestion Callout Box */
+    .suggestions-box {
+      margin-top: 30px;
+      background-color: #eef6ff;
+      border: 1px dashed #1e90ff;
+      padding: 15px 20px;
+      border-radius: 6px;
+    }
+
+    .suggestions-box h3 {
+      margin-top: 0;
+      color: #1a365d;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Step 8 Banner: Toggle between original requirements & refined design suggestion -->
+    <div class="theme-switcher">
+      <span><strong>Preview:</strong> Compare original colors with the Refined Palette</span>
+      <button class="theme-btn" onclick="toggleTheme()" id="toggleBtn">Switch to Refined Theme</button>
+    </div>
+
+    <!-- Step 1: Page Title -->
+    <h1>Sunnydale School Community Portal</h1>
+
+    <!-- Step 2: Mission Statement Section -->
+    <section>
+      <h2 class="mission-heading">Mission Statement</h2>
+      <p>
+        At Sunnydale School, our mission is to foster a safe, inclusive, and engaging learning environment where every student is empowered to achieve academic excellence, develop strong character, and become a lifelong learner.
+      </p>
+    </section>
+
+    <!-- Step 2, 3, 5, 6: Upcoming Events Section -->
+    <section>
+      <!-- Step 5: ID assigned to the Upcoming Events section heading -->
+      <h2 id="upcoming-events">Upcoming Events</h2>
+      
+      <div class="events-container">
+        <ul>
+          <!-- Step 6: data-event-type and title attributes -->
+          <li data-event-type="indoor" title="Event Type: Indoor">
+            <!-- Step 3: Wrapped date in <span> with inline styles -->
+            Science Fair - <span style="font-weight: bold; color: red;">June 10</span>
+          </li>
+
+          <!-- Step 5: Outdoor class added -->
+          <!-- Step 6: data-event-type and title attributes -->
+          <li class="outdoor" data-event-type="outdoor" title="Event Type: Outdoor">
+            <!-- Step 3: Wrapped date in <span> with inline styles -->
+            Art Exhibition - <span style="font-weight: bold; color: red;">June 15</span>
+          </li>
+
+          <!-- Step 5: Outdoor class added -->
+          <!-- Step 6: data-event-type and title attributes -->
+          <li class="outdoor" data-event-type="outdoor" title="Event Type: Outdoor">
+            <!-- Step 3: Wrapped date in <span> with inline styles -->
+            Sports Day - <span style="font-weight: bold; color: red;">June 20</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Step 4, 7: Contact Us Section -->
+    <section>
+      <h2 class="contact-heading">Contact Us</h2>
+      
+      <!-- Step 7: Grouped in a div tag with class "section" -->
+      <div class="section">
+        <p>If you have any questions, feel free to reach out to us:</p>
+        <p>
+          <!-- Step 4: title attributes offering hover tooltip -->
+          Email: 
+          <strong class="contact-item" title="Click to copy email" onclick="handleContactClick('info@sunnydaleschool.edu')">
+            info@sunnydaleschool.edu
+          </strong>
+        </p>
+        <p>
+          <!-- Step 4: title attributes offering hover tooltip -->
+          Phone: 
+          <strong class="contact-item" title="Click to copy phone number" onclick="handleContactClick('(555) 123-4567')">
+            (555) 123-4567
+          </strong>
+        </p>
+        
+        <!-- Interactive feedback toast for contact interaction -->
+        <div id="feedback-toast">Thanks for reaching out!</div>
+      </div>
+
+      <!-- Step 4 Comment: Imagine clicking here shows a message: 'Thanks for reaching out!' -->
+    </section>
+
+    
+  </div>
+
+  <!-- JavaScript for Interactive Behaviors -->
+  <script>
+    // Step 4: Click interaction handler
+    function handleContactClick(info) {
+      // Copy to clipboard
+      navigator.clipboard.writeText(info);
+      
+      // Display the interactive toast message requested in Step 4
+      const toast = document.getElementById('feedback-toast');
+      toast.style.display = 'block';
+      toast.textContent = `Copied "${info}"! Thanks for reaching out!`;
+
+      // Hide toast after 3 seconds
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 3000);
+    }
+
+    // Step 8: Toggle refined theme vs initial specification
+    function toggleTheme() {
+      const body = document.body;
+      const btn = document.getElementById('toggleBtn');
+
+      if (body.classList.contains('refined-theme')) {
+        body.classList.remove('refined-theme');
+        btn.textContent = 'Switch to Refined Theme';
+      } else {
+        body.classList.add('refined-theme');
+        btn.textContent = 'Switch to Original Requirements';
+      }
+    }
+  </script>
+
+</body>
+</html>
