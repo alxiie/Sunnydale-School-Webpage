@@ -1,0 +1,181 @@
+/* General Body Styles */
+body {
+font-family: 'Arial', sans-serif;
+line-height: 1.6;
+color: #333333;
+background-color: #f4f6f9;
+margin: 0;
+padding: 20px;
+}
+
+.container {
+max-width: 800px;
+margin: 0 auto;
+background: #ffffff;
+padding: 30px;
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Page Title */
+h1 {
+font-size: 24px;
+font-weight: bold;
+color: #1E90FF;
+text-align: center;
+margin-bottom: 25px;
+}
+
+/* Section Heading Colors */
+h2.mission-heading {
+color: #32CD32;
+}
+
+h2#upcoming-events {
+color: #FFA07A;
+}
+
+h2.contact-heading {
+color: #20B2AA;
+}
+
+/* Upcoming Events Container */
+.events-container {
+background-color: #FFFFE0;
+padding: 15px 20px;
+border-radius: 6px;
+margin-bottom: 25px;
+}
+
+/* Outdoor Events */
+.outdoor {
+background-color: #AFEEEE;
+padding: 5px;
+border: 1px solid #B0E0E6;
+margin-bottom: 8px;
+border-radius: 4px;
+list-style-position: inside;
+}
+
+/* Event Dates */
+.event-date {
+font-weight: bold;
+color: red;
+}
+
+/* Lists */
+ul {
+padding-left: 20px;
+}
+
+ul li {
+margin-bottom: 8px;
+}
+
+/* Contact Section */
+.section {
+background-color: #f8f3f3;
+padding: 10px;
+border-radius: 6px;
+border-left: 4px solid #20B2AA;
+}
+
+/* Contact Items */
+.contact-item {
+cursor: pointer;
+display: inline-block;
+margin: 5px 0;
+padding: 4px 8px;
+border-radius: 4px;
+transition: background-color 0.2s;
+}
+
+.contact-item:hover {
+background-color: #e0e0e0;
+}
+
+/* Interactive Feedback Toast */
+#feedback-toast {
+display: none;
+background-color: #2e7d32;
+color: white;
+padding: 10px 15px;
+border-radius: 4px;
+margin-top: 10px;
+font-weight: bold;
+font-size: 14px;
+}
+
+/* Refined Theme */
+body.refined-theme {
+background-color: #f8f9fa;
+}
+
+body.refined-theme .container {
+border-top: 5px solid #1a365d;
+}
+
+body.refined-theme h1 {
+color: #1a365d;
+}
+
+body.refined-theme h2 {
+color: #2b6cb0 !important;
+border-bottom: 2px solid #e2e8f0;
+padding-bottom: 5px;
+}
+
+body.refined-theme .events-container {
+background-color: #f7fafc;
+border: 1px solid #e2e8f0;
+}
+
+body.refined-theme .outdoor {
+background-color: #ebf8ff;
+border: 1px solid #bee3f8;
+color: #2b6cb0;
+}
+
+body.refined-theme .section {
+background-color: #edf2f7;
+border-left-color: #2b6cb0;
+}
+
+/* Theme Switcher Banner */
+.theme-switcher {
+background: #edf2f7;
+padding: 12px;
+border-radius: 6px;
+margin-bottom: 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.theme-btn {
+background-color: #1e90ff;
+color: white;
+border: none;
+padding: 8px 16px;
+border-radius: 4px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.theme-btn:hover {
+opacity: 0.9;
+}
+
+/* Suggestions Box */
+.suggestions-box {
+margin-top: 30px;
+background-color: #eef6ff;
+border: 1px dashed #1e90ff;
+padding: 15px 20px;
+border-radius: 6px;
+}
+
+.suggestions-box h3 {
+margin-top: 0;
+color: #1a365d;
+}
